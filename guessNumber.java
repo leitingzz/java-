@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class practices3 {
+public class guessNumber {
     public static void main(String[] args){
         int ans = 50;
         Scanner scanner = new Scanner(System.in);

@@ -9,6 +9,7 @@ public class ArrayAndForLoop {
         double average = (double)total / 10;
         System.out.println("总和为：" + total);
         System.out.println("平均数为：" + average);
+        
         String[] names = {"张三", "李四", "王五"};
         for(String name: names){
             System.out.println(name);

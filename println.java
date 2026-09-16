@@ -1,4 +1,4 @@
-public class practices1 {
+public class println {
     public static void main(String[] args){
         String name = "张三";
         int age = 20;
