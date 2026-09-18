@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class BankApp{
     public static void main(String[] args){
-        BankAccount account = new BankAccount("张三", 1000);
+        BankAccount account = new SavingAccount("张三", 1000, 0.05);
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while(running){
-            System.out.println("1.存款  2取款  3.查询余额  4.退出");
+            System.out.println("1.存款  2取款  3.查询余额  4.退出  5.结算利息");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -30,6 +30,11 @@ public class BankApp{
                 case 4:
                     running = false;
                     System.out.println("再见！");
+                    break;
+                
+                case 5:
+                    account.addinterest();
+                    account.settle();
                     break;
 
                 default:
