@@ -5,7 +5,7 @@ public class Dog {
     int age;
     String sex;
 
-    public Dog(String name, int age, String sex){
+    public Dog(String name, int age, String sex){       //构造方法
         this.name = name;
         this.age = age;
         this.sex = sex;
