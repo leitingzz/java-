@@ -14,10 +14,10 @@ public class BankApp{
             int choice = -1;
             
             try {
-                choice = scanner.nextInt();               
+                choice = scanner.nextInt();               //可能出错的代码
             } catch (Exception e) {
-                System.out.println("输入无效，请重新输入！");
-                scanner.nextLine();
+                System.out.println("输入无效，请重新输入！");           //处理异常
+                scanner.nextLine();         //清除错误内容：错误的输入内容还留在输入缓冲区里，没被读走，下一次循环再调用nextInt()会立刻又读到同样的垃圾内容，再次报错，陷入死循环。
                 continue;
             }
 
