@@ -36,4 +36,8 @@ public class Student{
     public int getId(){
         return id;
     }
+
+    public ArrayList<Integer> getScores(){
+        return scores;
+    }
 }
