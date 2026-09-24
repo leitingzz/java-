@@ -63,8 +63,13 @@ public class Main {
                         break;
                     }
                     System.out.println("请输入学生成绩：");
-                    score = scanner.nextInt();
-                    targetStudent.addScore(score);
+                    try{
+                        score = scanner.nextInt();
+                        targetStudent.addScore(score);
+                    }catch(Exception e){
+                        System.out.println("输入不合法！");
+                        scanner.nextLine();
+                    }
                     break;
                 
                 case 3:
@@ -78,6 +83,7 @@ public class Main {
                     System.out.println("学生姓名：" + targetStudent.getName());
                     System.out.println("学生id：" + targetStudent.getId());
                     System.out.println("学生成绩：" + targetStudent.getScores());
+                    System.out.println("学生平均成绩：" + targetStudent.getAverage());
                     break;
 
                 case 4:
@@ -85,7 +91,7 @@ public class Main {
                         System.out.println("学生姓名：" + s.getName());
                         System.out.println("学生id：" + s.getId());
                         System.out.println("学生成绩：" + s.getScores());
-                    };
+                    }
                     break;
 
                 default:

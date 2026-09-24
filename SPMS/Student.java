@@ -21,6 +21,9 @@ public class Student{
     }
 
     public double getAverage(){
+        if (scores.size() == 0){
+            return 0;
+        }
         int total = 0;
         for(int score : scores){
             total += score;
