@@ -1,4 +1,4 @@
-package SPMS;
+package SPMS1;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Student> student = new ArrayList<>();
         
         while(running){
             int choice;
@@ -42,7 +42,7 @@ public class Main {
                     System.out.println("请输入学生学号：");
                     id = scanner.nextInt();
 
-                    if(findStudentById(students, id) != null){
+                    if(findStudentById(student, id) != null){
                         System.out.println("该学号已存在！");
                         break;
                     }
@@ -51,13 +51,13 @@ public class Main {
                     System.out.println("请输入学生姓名：");
                     name = scanner.nextLine();
                     Student s1 = new Student(name, id, new ArrayList<Integer>());
-                    students.add(s1);
+                    student.add(s1);
                     break;
 
                 case 2:
                     System.out.println("请输入学生id：");
                     id = scanner.nextInt();
-                    targetStudent = findStudentById(students, id);
+                    targetStudent = findStudentById(student, id);
                     if(targetStudent == null){
                         System.out.println("该学生不存在！");
                         break;
@@ -75,22 +75,17 @@ public class Main {
                 case 3:
                     System.out.println("请输入学生id：");
                     id = scanner.nextInt();
-                    targetStudent = findStudentById(students, id);
+                    targetStudent = findStudentById(student, id);
                     if(targetStudent == null){
                         System.out.println("该学生不存在！");
                         break;
                     }
-                    System.out.println("学生姓名：" + targetStudent.getName());
-                    System.out.println("学生id：" + targetStudent.getId());
-                    System.out.println("学生成绩：" + targetStudent.getScores());
-                    System.out.println("学生平均成绩：" + targetStudent.getAverage());
+                    targetStudent.printinfo();
                     break;
 
                 case 4:
-                    for(Student s : students){
-                        System.out.println("学生姓名：" + s.getName());
-                        System.out.println("学生id：" + s.getId());
-                        System.out.println("学生成绩：" + s.getScores());
+                    for(Student s : student){
+                        s.printinfo();
                     }
                     break;
 

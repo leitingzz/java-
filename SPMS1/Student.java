@@ -1,7 +1,7 @@
-package SPMS;
+package SPMS1;
 import java.util.ArrayList;
 
-public class Student{
+public class Student implements Printable {
     private String name;
     private int id;
     private ArrayList<Integer> scores;
@@ -42,5 +42,13 @@ public class Student{
 
     public ArrayList<Integer> getScores(){
         return scores;
+    }
+
+    @Override 
+    public void printinfo(){
+        System.out.println("学生姓名：" + name);
+        System.out.println("学生id：" + id);
+        System.out.println("学生成绩：" + scores);
+        System.out.println("学生平均成绩：" + getAverage());
     }
 }

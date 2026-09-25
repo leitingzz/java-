@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BankApp{
+public class Main{
     /**
      * @param args
      */
