@@ -28,7 +28,7 @@ public class Main {
             System.out.println("文件不存在：" + e.getMessage());
         }
     }
-
+ 
     public static void writing(){
         try{
             FileWriter writer = new FileWriter("fileReadAndWrite/student.txt");
