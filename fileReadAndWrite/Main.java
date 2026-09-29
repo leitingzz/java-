@@ -38,7 +38,7 @@ public class Main {
         }catch(IOException e){
             System.out.println("写文件失败：" + e.getMessage());
         }
-    }
+    } 
     public static void main(String[] args){
         writing();
         reading();
