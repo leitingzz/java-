@@ -1,8 +1,11 @@
 package SPMS1;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
+
     public static Student findStudentById(ArrayList<Student> students, int id){
         for(Student s : students){
             if(s.getId() == id){
@@ -10,6 +13,22 @@ public class Main {
             }
         }
         return null;
+    }
+
+    public static void saveToFile(ArrayList<Student> students){
+        try {
+            FileWriter writer = new FileWriter("SPMS1/students.txt");
+            for(Student s : students){
+                String line = s.getId() + "," + s.getName();
+                for(int score : s.getScores()){
+                    line += "," + score;
+                }
+                writer.write(line + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("保存失败：" + e.getMessage());
+        }
     }
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -34,6 +53,7 @@ public class Main {
             
             switch (choice) {
                 case 0:
+                    saveToFile(student);
                     System.out.println("再见！");
                     running = false;
                     break;
