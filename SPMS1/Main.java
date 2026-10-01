@@ -3,8 +3,34 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Main {
+
+    public static ArrayList<Student> loadFromFile(){
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            Scanner fileScanner = new Scanner(new File("SPMS1/students.txt"));
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String [] parts = line.split(",");
+                int id = Integer.parseInt(parts[0]);
+                String name = parts[1];
+                ArrayList<Integer> scores = new ArrayList<>();
+                for(int i = 2; i < parts.length; i++){
+                    int score = Integer.parseInt(parts[i]);
+                    scores.add(score);
+                }
+                Student student = new Student(name, id, scores);
+                students.add(student);
+                fileScanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("未找到文件：" + e.getMessage());            
+        }
+        return students;
+    }
 
     public static Student findStudentById(ArrayList<Student> students, int id){
         for(Student s : students){
@@ -33,7 +59,7 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-        ArrayList<Student> student = new ArrayList<>();
+        ArrayList<Student> student = loadFromFile();
         
         while(running){
             int choice;
