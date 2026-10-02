@@ -24,8 +24,8 @@ public class Main {
                 }
                 Student student = new Student(name, id, scores);
                 students.add(student);
-                fileScanner.close();
             }
+            fileScanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("未找到文件：" + e.getMessage());            
         }
