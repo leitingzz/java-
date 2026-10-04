@@ -29,4 +29,18 @@ public class linkedList {
         }
         System.out.println("null");
     }
+
+    public void delete(int data){
+        Node curr = head;
+        Node prev = curr;
+        while(curr.data != data){
+            prev = curr;
+            curr = curr.next;
+        }
+        if(curr == head){
+            head = head.next;
+        }else{
+            prev.next = curr.next;
+        }
+    }
 }
