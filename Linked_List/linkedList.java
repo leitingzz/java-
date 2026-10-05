@@ -4,7 +4,7 @@ public class linkedList {
 
     private Node head;
     
-    public linkedList(Node head){
+    public linkedList(){
         head = null;
     }
 
@@ -31,11 +31,19 @@ public class linkedList {
     }
 
     public void delete(int data){
+        if(head == null){
+            System.out.println("链表为空！");
+            return ;
+        }
         Node curr = head;
         Node prev = curr;
-        while(curr.data != data){
+        while(curr != null && curr.data != data){
             prev = curr;
             curr = curr.next;
+        }
+        if(curr == null){
+            System.out.println("该数据不存在！");
+            return ;
         }
         if(curr == head){
             head = head.next;
