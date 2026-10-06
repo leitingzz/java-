@@ -6,6 +6,7 @@ public class Main {
         newList.add(1);
         newList.add(2);
         newList.add(3);
+        newList.reserve();
         newList.printList();
     }
 }

@@ -1,5 +1,6 @@
 package Linked_List;
 
+
 public class linkedList {
 
     private Node head;
@@ -50,5 +51,22 @@ public class linkedList {
         }else{
             prev.next = curr.next;
         }
+    }
+
+    public void reserve(){
+        if(head == null){
+            return;
+        }
+        Node pre = null;
+        Node cur = head;
+
+        while(cur != null){
+            Node next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        head = pre;
     }
 }
