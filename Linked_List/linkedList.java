@@ -66,7 +66,7 @@ public class linkedList {
             pre = cur;
             cur = next;
         }
-
+ 
         head = pre;
     }
 }
