@@ -23,4 +23,7 @@ public class MyStack {
         return value;
     }
     
+    public boolean isEmpty(){
+        return top == null;
+    }
 }
