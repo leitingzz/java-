@@ -19,6 +19,7 @@ public class MyStack {
         }
 
         int value = top.data;
+        System.out.println(value);
         top = top.next;
         return value;
     }
