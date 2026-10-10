@@ -40,6 +40,38 @@ public class Main {
         return node;
     }
 
+    public static int count(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        return 1 + count(node.left) + count(node.right);
+    }
+
+    public static int height(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        return 1 + Math.max(height(node.left), height(node.right));
+    }
+
+    public static int max(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        int leftMax = max(node.left);
+        int rightMax = max(node.right);
+        return Math.max(node.data, Math.max(leftMax, rightMax));
+    }
+
+    public static int countLeaves(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        if(node.left == null && node.right == null){
+            return 1;
+        }
+        return countLeaves(node.left) + countLeaves(node.right);
+    }
     public static void main(String[] args){
         TreeNode root = null;
         root = insert(root, 5);
@@ -49,8 +81,9 @@ public class Main {
         root = insert(root, 4);
         root = insert(root, 7);
         root = insert(root, 9);
-        inorderPrint(root);
-        System.out.println(search(root, 4));
-        System.out.println(search(root, 6));
+        System.out.println("节点数：" + count(root));
+        System.out.println("高度：" + height(root));
+        System.out.println("最大数：" + max(root));
+        System.out.println("叶子节点数：" + countLeaves(root));
     }
 }
