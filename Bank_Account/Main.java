@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
 public class Main{
-    /**
-     * @param args
-     */
     public static void main(String[] args){     //多态：声明类型=实际类型，多态中使用的方法只能是声明类型中的方法，但是会运行实际类型中重写的方法
         BankAccount account = new SavingAccount("张三", 1000, 0.05);
         Scanner scanner = new Scanner(System.in);

@@ -55,12 +55,10 @@ public class Main {
     }
 
     public static int max(TreeNode node){
-        if(node == null){
-            return 0;
+        while(node.right != null){
+            node = node.right;
         }
-        int leftMax = max(node.left);
-        int rightMax = max(node.right);
-        return Math.max(node.data, Math.max(leftMax, rightMax));
+        return node.data;
     }
 
     public static int countLeaves(TreeNode node){
@@ -74,13 +72,10 @@ public class Main {
     }
     public static void main(String[] args){
         TreeNode root = null;
-        root = insert(root, 5);
-        root = insert(root, 3);
-        root = insert(root, 8);
-        root = insert(root, 1);
-        root = insert(root, 4);
-        root = insert(root, 7);
-        root = insert(root, 9);
+        int[] values = {5, 3, 8, 1, 4, 7, 9};
+        for(int value : values){
+            root = insert(root, value);
+        }
         System.out.println("节点数：" + count(root));
         System.out.println("高度：" + height(root));
         System.out.println("最大数：" + max(root));
