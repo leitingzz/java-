@@ -72,7 +72,7 @@ public class Main {
     }
     public static void main(String[] args){
         TreeNode root = null;
-        int[] values = {5, 3, 8, 1, 4, 7, 9};
+        int[] values = {1, 2, 3, 4, 5};
         for(int value : values){
             root = insert(root, value);
         }
