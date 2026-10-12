@@ -15,6 +15,17 @@ public class HDU2199 {
                 System.out.println("No solution!");
                 continue;
             }
+            double left = 0, right = 100;
+            for(int i = 0; i < 100; i++){           //迭代100次数据足够精确
+                double mid = (left + right) / 2;
+                if(f(mid) < Y){
+                    left = mid;
+                }else{
+                    right = mid;
+                }
+            }
+            System.out.printf("%.4f\n", (left + right) / 2);
         }
+        scanner.close();
     }
 }
