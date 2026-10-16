@@ -61,6 +61,13 @@ public class Main {
         return node.data;
     }
 
+    public static int min(TreeNode node){
+        while(node.left != null){
+            node = node.left;
+        }
+        return node.data;
+    }
+
     public static int countLeaves(TreeNode node){
         if(node == null){
             return 0;
@@ -70,12 +77,36 @@ public class Main {
         }
         return countLeaves(node.left) + countLeaves(node.right);
     }
+
+    public static TreeNode delete(TreeNode node, int target){
+        if(node == null){
+            return null;
+        }
+
+        if(target < node.data){
+            node.left = delete(node.left, target);
+        }else if(target > node.data){
+            node.right = delete(node.right, target);
+        }else{
+            if(node.left == null){
+                return node.right;
+            }else if(node.right == null){
+                return node.left;
+            }else{
+                node.data = min(node.right);
+                node.right = delete(node.right, node.data);
+                return node;
+            }
+        }
+        return node;
+    }
     public static void main(String[] args){
         TreeNode root = null;
-        int[] values = {1, 2, 3, 4, 5};
+        int[] values = {5, 3, 8, 1, 4, 7, 9};
         for(int value : values){
             root = insert(root, value);
         }
+        
         System.out.println("节点数：" + count(root));
         System.out.println("高度：" + height(root));
         System.out.println("最大数：" + max(root));
