@@ -107,9 +107,11 @@ public class Main {
             root = insert(root, value);
         }
         
+        root = delete(root, 5);
         System.out.println("节点数：" + count(root));
         System.out.println("高度：" + height(root));
         System.out.println("最大数：" + max(root));
         System.out.println("叶子节点数：" + countLeaves(root));
+        inorderPrint(root);
     }
 }
