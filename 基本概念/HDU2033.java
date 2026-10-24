@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class SumOfTwoTimes {
+public class HDU2033 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int ammount = scanner.nextInt();

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class SumOfSquaresCubes {
+public class HDU2007 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextInt()) {           

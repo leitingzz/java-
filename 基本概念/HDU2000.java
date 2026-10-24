@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class ASCllCodeSorting {
+public class HDU2000 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNext()){

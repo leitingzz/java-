@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HDU04310 {
+public class HDU4310 {
     static class Enemy implements Comparable<Enemy> {
         int dps;
         int hp;

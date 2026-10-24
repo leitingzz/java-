@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NumericalStatistics {
+public class HDU2008 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextInt()) {          //判断下一个输入的是否为整数

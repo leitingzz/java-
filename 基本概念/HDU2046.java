@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class DominoesLaidInSquares {
+public class HDU2046 {
     public static void main(String[] args){
         long[] arr = new long[51];
         arr[1] = 1;

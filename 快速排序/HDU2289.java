@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HDU2298 {
+public class HDU2289 {
     static double r, R, H, V; 
     static final double PI = Math.acos(-1.0);       //反余弦函数
     static final double EPS = 1e-9; 
