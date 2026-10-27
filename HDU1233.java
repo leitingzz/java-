@@ -33,9 +33,7 @@ public class HDU1233 {
 
         while(true){
             while(!st.hasMoreTokens()){
-                String line = br.readLine();
-                if(line == null)return;
-                st = new StringTokenizer(line);
+                st = new StringTokenizer(br.readLine());
             }
 
             int n = Integer.parseInt(st.nextToken());
@@ -46,11 +44,29 @@ public class HDU1233 {
 
             for(int i = 0; i < m; i++){
                 while(!st.hasMoreTokens()){
-                    String line = br.readLine();
-                    if(line == null)return;
-                    st = new StringTokenizer(line);
+                    st = new StringTokenizer(br.readLine());
+                }
+                int u = Integer.parseInt(st.nextToken());
+                int v = Integer.parseInt(st.nextToken());
+                int w = Integer.parseInt(st.nextToken());
+                edges[i] = new Edge(u, v, w);
+            }
+
+            Arrays.sort(edges);
+
+            parent = new int[n + 1];
+            for(int i = 1; i <= n; i++)parent[i] = i;
+
+            int ans = 0, count = 0;
+            for(Edge e:edges){
+                if(find(e.u) != find(e.v)){
+                    union(e.u, e.v);
+                    ans += e.w;
+                    count++;
+                    if(count == n - 1)break;
                 }
             }
+            System.out.println(ans);
         }
     }
 }
